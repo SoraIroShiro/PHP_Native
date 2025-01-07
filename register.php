@@ -6,7 +6,12 @@
     <title>Register</title>
 </head>
 <body>
-<?php include 'layout/header.html'?>
+    <header>
+    <?php 
+        include 'layout/header.html';
+        include 'layout/nav.html';?>
+    </header>
+
     <h1>Daftar Akun</h1>
     <form action="">
         <input type="text" placeholder="Username" name = "username">

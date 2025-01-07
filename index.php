@@ -6,7 +6,12 @@
     <title>Belajar PHP Native</title>
 </head>
 <body>
-    <?php include 'layout/header.html';?>
+    <header>
+        <?php 
+            include 'layout/header.html';
+            include 'layout/nav.html';
+        ?>
+    </header>
     <main>
         <p>Hallo haii haii</p>
     </main>
