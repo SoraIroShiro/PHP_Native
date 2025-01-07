@@ -2,7 +2,7 @@
 .env
 
 # Ignore vendor directory
-/vendor
+/service/vendor
 
 # Ignore node_modules directory
 /node_modules
