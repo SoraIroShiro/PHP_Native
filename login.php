@@ -1,3 +1,12 @@
+<?php
+if (isset($_POST['login'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    echo $username .' '. $password ; 
+    // fungsi titik untuk pemisah antar variabel pada php
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,10 +22,10 @@
         ?>
     </header>
     <main>
-        <form action="">
+        <form action="login.php" method="POST">
             <input type="text" placeholder="Username" name = "username">
             <input type="text" placeholder="Password" name = "password">
-            <button type="submit">Login</button>
+            <button type="submit" name="login">Login</button>
         </form>
         <a href=""></a>
     </main>
