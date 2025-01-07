@@ -15,9 +15,10 @@ if (isset($_POST['login'])) {
     if ($result->num_rows > 0) {
         echo "Data ada";
         $data = $result->fetch_assoc();
-        echo "data username adalah: ". $data["username"] ."dan passwordnya: ". $data["password"] ;
+        
+        header("Location: dashboard.php");
     } else {
-        echo "Data tidak ada";
+        echo "Akun tidak ditemukan";
     }
 
     // fungsi titik untuk pemisah antar variabel pada php
