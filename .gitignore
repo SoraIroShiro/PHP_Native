@@ -1,0 +1,20 @@
+# Ignore .env file
+.env
+
+# Ignore vendor directory
+/vendor
+
+# Ignore node_modules directory
+/node_modules
+
+# Ignore .idea directory
+/.idea
+
+# Ignore .vscode directory
+/.vscode
+
+# Ignore log files
+*.log
+
+# Ignore temp files
+*.tmp
