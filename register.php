@@ -1,6 +1,8 @@
 <?php
 include("service/database.php");
 
+$register_messages ="";
+
 if (isset($_POST['register'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -8,7 +10,8 @@ if (isset($_POST['register'])) {
     $sql = "INSERT INTO users (username, password) VALUES ('.$username.', '.$password.')";
 
     if($db->query($sql)){
-        echo "berhasil ditambahkan";}
+
+        $register_messages = "Akun ditambahkan! Silakan Login";}
     else {
             echo "gagal ditambahkan";
         }
@@ -33,6 +36,7 @@ if (isset($_POST['register'])) {
     </header>
 
     <h1>Daftar Akun</h1>
+    <i><?php echo $register_messages?></i>
     <form action="register.php" method="POST">
         <input type="text" placeholder="Username" name = "username">
         <input type="text" placeholder="Password" name = "password">
