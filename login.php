@@ -1,5 +1,12 @@
 <?php
+session_start();
+
 include("service/database.php");
+$login_messages = "";
+
+if (isset($_SESSION["is_login"])) {
+    header("location: dashboard.php");
+}
 
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
@@ -15,10 +22,13 @@ if (isset($_POST['login'])) {
     if ($result->num_rows > 0) {
         echo "Data ada";
         $data = $result->fetch_assoc();
+
+        $_SESSION ["username"] = $data["username"];
+        $_SESSION ["is_login"] = true;
         
         header("Location: dashboard.php");
     } else {
-        echo "Akun tidak ditemukan";
+        $login_messages ="Akun Tidak Ditemukan!";
     }
 
     // fungsi titik untuk pemisah antar variabel pada php
@@ -40,6 +50,7 @@ if (isset($_POST['login'])) {
         ?>
     </header>
     <main>
+        <i><?php echo $login_messages ?></i>
         <form action="login.php" method="POST">
             <input type="text" placeholder="Username" name = "username">
             <input type="text" placeholder="Password" name = "password">
