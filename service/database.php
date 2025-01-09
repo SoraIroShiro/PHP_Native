@@ -15,6 +15,6 @@ if ($db -> connect_error) {
     echo"Gagal terhubung ke database";
     die("error");
 }
-echo"databse terhubung";
+echo"database terhubung";
 
 ?>

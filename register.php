@@ -15,20 +15,22 @@ if (isset($_POST['register'])) {
     try{
         $sql = "INSERT INTO users (username, password) VALUES ('.$username.', '.$password.')";
 
-    if($db->query($sql)){
+        if($db->query($sql)){
 
-        $register_messages = "Akun ditambahkan! Silakan Login";}
-    else {
-            echo "gagal ditambahkan";
+            $register_messages = "Akun ditambahkan! Silakan Login";
+        } else {
+           $register_messages = "Gagal menambahkan akun";
         }
-    echo $username .' '. $password ; 
+
     // fungsi titik untuk pemisah antar variabel pada php
     }
-    
-
     catch(mysqli_sql_exception){
         $register_messages ="Username sudah digunakan";
     }
+}
+    
+
+    
 
     
 
@@ -49,7 +51,7 @@ if (isset($_POST['register'])) {
     </header>
 
     <h1>Daftar Akun</h1>
-    <i><?php echo $register_messages?></i>
+    <i><?= $register_messages?></i>
     <form action="register.php" method="POST">
         <input type="text" placeholder="Username" name = "username">
         <input type="text" placeholder="Password" name = "password">
